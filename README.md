@@ -1,2 +1,7 @@
 # LichessAccountHacking
-Lichess account hacking way(bruteforce) after security update 2022.
+Новейший способ взлома аккаунтов для сайта https//lichess.org. Используется алгоритм bruteforce(перебор паролей).
+Внимание! Используйте это везде! Взламывать аккаунты - хорошо.
+
+By fish224, Kv4nT, Ma3rX...
+
+лох
