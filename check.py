@@ -1,6 +1,7 @@
-import textwrap
-import requests
 import os
+import textwrap
+
+import requests
 
 from config import *
 

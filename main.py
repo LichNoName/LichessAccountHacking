@@ -1,3 +1,5 @@
+import os
+
 import check
 import hack_multipart_account
 import team_hack
@@ -38,7 +40,7 @@ def funcs_print():
 
 
 def start():
-    try:
+    if True:
         func = input(magenta + '[?] Выберите функцию: ')
 
         if func == '1':
@@ -76,7 +78,13 @@ def start():
         elif func == '4':
             os.system('cls')
             print(cyanlight + "Генерация паролей.")
-            wordlist.start()
+            with open("passwords.txt", "w") as passwords_:
+                my_list = wordlist.start()
+                for password in my_list:
+                    passwords_.write(password.replace("'", "") + '\n')
+            with open("passwords.txt", "r") as passwords_:
+                for password in passwords_.read():
+                    print(password)
             print(green + "[+] Готово.")
             input(magenta + "[?] Продолжить? ")
             os.system('cls')
@@ -88,8 +96,8 @@ def start():
             print("--------------Выход--------------")
             exit()
 
-    except Exception as exc:
-        print(red + '[X] Ошибка:', magenta + str(exc))
+    # except Exception as exc:
+    #    print(red + '[X] Ошибка:', magenta + str(exc))
 
 
 if __name__ == '__main__':
