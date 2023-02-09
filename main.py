@@ -24,7 +24,7 @@ def funcs_print():
         |   ,/    |  | '.'|'   | '.'||  :  :_:,'|   | '  ,/ /  /  ,.  |'   | '.'|'  : |--'  
         '---'     ;  :    ;|   :    :|  | ,'    ;   : ;--' ;  :   .'   \   :    :;  |,'     
                   |  ,   /  \   \  / `--''      |   ,/     |  ,     .-./\   \  / '--'       
-                   ---`-'    `----'             '---'       `--`---'     `----'                            1.2
+                   ---`-'    `----'             '---'       `--`---'     `----'                            1.3
                                                                                     
          {blue}                                                   Functions by ma3rx fish224 kv4nt chleb.
                                                                 With you after first SVC vs MARCO war!{yellow}
@@ -46,7 +46,7 @@ def start():
         if func == '1':
             os.system('cls')
             with open("passwords.txt", "r") as passwords:
-                hack_multipart_account.start(passwords)
+                hack_multipart_account.start(list(passwords.read()))
             print(green + "[+] Готово.")
             input(magenta + "[?] Продолжить? ")
             os.system('cls')
